@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://coh8amutn3388"]
+
+[ext_resource type="Texture2D" uid="uid://fng7vs31f77h" path="res://assets/square.png" id="1_ot53i"]
+[ext_resource type="Script" path="res://player.gd" id="1_ptkta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swbn3"]
+size = Vector2(80, 80)
+
+[sub_resource type="Animation" id="Animation_s3wf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vq8hy"]
+resource_name = "dash (orange)"
+length = 0.05
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.533333, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4gms7"]
+resource_name = "idle (red)"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_akrkf"]
+resource_name = "jump (yellow)"
+length = 0.05
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.866667, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ejijd"]
+resource_name = "move (blue)"
+length = 0.05
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(5.19812e-06, 0.666158, 0.956126, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcapc"]
+_data = {
+"RESET": SubResource("Animation_s3wf4"),
+"dash (orange)": SubResource("Animation_vq8hy"),
+"idle (red)": SubResource("Animation_4gms7"),
+"jump (yellow)": SubResource("Animation_akrkf"),
+"move (blue)": SubResource("Animation_ejijd")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ptkta")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_ot53i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_swbn3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fcapc")
+}
+autoplay = "idle (red)"

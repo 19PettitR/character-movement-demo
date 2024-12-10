@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://der0uk805kxvi"]
+
+[ext_resource type="Texture2D" uid="uid://j7sxwnr8qyfn" path="res://assets/sky.png" id="1_ypqwy"]
+[ext_resource type="Texture2D" uid="uid://k116h4iciy8a" path="res://assets/DIRT BLOCK.png" id="2_km4j2"]
+[ext_resource type="PackedScene" uid="uid://coh8amutn3388" path="res://player.tscn" id="3_1xxys"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi2o0"]
+texture = ExtResource("2_km4j2")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_2kw8a"]
+tile_size = Vector2i(30, 30)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_xi2o0")
+
+[node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ypqwy")
+stretch_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_2kw8a")
+format = 2
+layer_0/tile_data = PackedInt32Array(655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 720895, 1, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_1xxys")]
+position = Vector2(211, 527)
+scale = Vector2(0.663688, 0.663688)
