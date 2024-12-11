@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://fng7vs31f77h" path="res://assets/square.png" id="1_ot53i"]
 [ext_resource type="Script" path="res://player.gd" id="1_ptkta"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_swbn3"]
-size = Vector2(80, 80)
-
 [sub_resource type="Animation" id="Animation_s3wf4"]
 length = 0.001
 tracks/0/type = "value"
@@ -97,6 +94,9 @@ _data = {
 "move (blue)": SubResource("Animation_ejijd")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkcyw"]
+size = Vector2(80, 80)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ptkta")
 
@@ -104,12 +104,11 @@ script = ExtResource("1_ptkta")
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_ot53i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("RectangleShape2D_swbn3")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fcapc")
 }
 autoplay = "idle (red)"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qkcyw")
