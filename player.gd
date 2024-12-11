@@ -7,7 +7,6 @@ const SPEED = 300.0
 const DASH_BOOST = 5
 const JUMP_VELOCITY = -400.0
 
-
 ## keeps track of whether the player is dashing or not
 var is_dashing : bool = false
 var dash_cooldown : bool = false
@@ -21,7 +20,11 @@ func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta * 1.2
+		## decrease the gravity if dashing (because it looks better)
+		if not is_dashing:
+			velocity += get_gravity() * delta * 1.2
+		else:
+			velocity += get_gravity() * delta * 0.6
 	
 	
 	## dashing (orange) overrides other colours
