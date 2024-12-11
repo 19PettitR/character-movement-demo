@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 ## boost from dashing
 const DASH_BOOST = 5
-const JUMP_VELOCITY = -400.0
+const DASH_DECELERATION_MULTIPLIER = 100
+const DASH_GRAVITY_MULTIPLIER = 0.6
 
 ## keeps track of whether the player is dashing or not
 var is_dashing : bool = false
@@ -24,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		if not is_dashing:
 			velocity += get_gravity() * delta * 1.2
 		else:
-			velocity += get_gravity() * delta * 0.6
+			velocity += get_gravity() * delta * DASH_GRAVITY_MULTIPLIER
 	
 	
 	## dashing (orange) overrides other colours
@@ -83,7 +85,7 @@ func _physics_process(delta: float) -> void:
 			if is_dashing:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			else:
-				velocity.x = move_toward(velocity.x, 0, SPEED * 100)
+				velocity.x = move_toward(velocity.x, 0, SPEED * DASH_DECELERATION_MULTIPLIER)
 	
 	## when a direction key is pressed, track which direction the player is facing for dash
 	if Input.is_action_just_pressed("right"):
