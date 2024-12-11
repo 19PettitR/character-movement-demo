@@ -69,6 +69,9 @@ func _physics_process(delta: float) -> void:
 		## dashing for 0.2 seconds
 		await get_tree().create_timer(0.2).timeout
 		is_dashing = false
+		## if the player jumped whilst dashing, turn yellow once dash is over
+		if not is_on_floor():
+			animation_player.play("jump (yellow)")
 		## cool down lasts 1.2 seconds total
 		await get_tree().create_timer(1).timeout
 		dash_cooldown = false
