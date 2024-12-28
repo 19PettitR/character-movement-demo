@@ -15,8 +15,15 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerManager="*res://globals/player_manager.gd"
+OSquareManager="*res://globals/osquare_manager.gd"
+
 [display]
 
+window/size/viewport_width=900
+window/size/viewport_height=600
 window/size/resizable=false
 
 [input]

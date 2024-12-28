@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://beeahhjoxx7mv"]
+
+[ext_resource type="Script" path="res://enemies/O_square/o_square.gd" id="1_2nrrg"]
+[ext_resource type="Texture2D" uid="uid://st7aoonrq1cm" path="res://enemies/O_square/O square.png" id="1_7ueu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvybl"]
+size = Vector2(80, 80)
+
+[node name="OSquare" type="CharacterBody2D"]
+script = ExtResource("1_2nrrg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.588235, 1, 1, 1)
+texture_filter = 1
+texture = ExtResource("1_7ueu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hvybl")

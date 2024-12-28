@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k116h4iciy8a"
-path="res://.godot/imported/DIRT BLOCK.png-fa0c4d8220b1c1ef12424bba8c2ab3c8.ctex"
+uid="uid://efpjptob507s"
+path="res://.godot/imported/spikes.png-8efac6e90e924e4a0fe59826b3cfc697.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/DIRT BLOCK.png"
-dest_files=["res://.godot/imported/DIRT BLOCK.png-fa0c4d8220b1c1ef12424bba8c2ab3c8.ctex"]
+source_file="res://obstacles/spikes/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-8efac6e90e924e4a0fe59826b3cfc697.ctex"]
 
 [params]
 

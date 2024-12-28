@@ -1,13 +1,18 @@
 ## USING THE GODOT BASIC MOVEMENT BUILT-IN SCRIPT
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
+@export var health: int = 3
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-## boost from dashing
-const DASH_BOOST = 5
-const DASH_DECELERATION_MULTIPLIER = 100
-const DASH_GRAVITY_MULTIPLIER = 0.6
+@export_category("Movement")
+@export var speed = 300.0
+@export var jump_velocity = -420.0
+@export var gravity_multiplier = 0.8
+
+@export_category("Dash")
+@export var dash_boost = 5
+@export var dash_deceleration_multiplier = 100
+@export var dash_gravity_multiplier = 0.2
+
 
 ## keeps track of whether the player is dashing or not
 var is_dashing : bool = false
@@ -24,9 +29,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		## decrease the gravity if dashing (because it looks better)
 		if not is_dashing:
-			velocity += get_gravity() * delta * 1.2
+			velocity += get_gravity() * delta * gravity_multiplier
 		else:
-			velocity += get_gravity() * delta * DASH_GRAVITY_MULTIPLIER
+			velocity += get_gravity() * delta * dash_gravity_multiplier
 	
 	
 	## dashing (orange) overrides other colours
@@ -41,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 		## do not turn yellow if dashing
 		if not is_dashing:
 			animation_player.play("jump (yellow)")
@@ -58,11 +63,11 @@ func _physics_process(delta: float) -> void:
 		## if the player dashes whilst idle, find which direction they were facing
 		if velocity.x == 0:
 			if last_facing_right:
-				velocity.x = SPEED * DASH_BOOST
+				velocity.x = speed * dash_boost
 			else:
-				velocity.x = SPEED * DASH_BOOST * -1
+				velocity.x = speed * dash_boost * -1
 		else:
-			velocity.x = velocity.x * DASH_BOOST
+			velocity.x = velocity.x * dash_boost
 		
 		## start a dash cooldown
 		dash_cooldown = true
@@ -82,19 +87,14 @@ func _physics_process(delta: float) -> void:
 	## normal movement only if not dashing
 	if not is_dashing:
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * speed
 		else:
-			## find whether the player is dashing or not and decelerate more when they are
-			if is_dashing:
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-			else:
-				velocity.x = move_toward(velocity.x, 0, SPEED * DASH_DECELERATION_MULTIPLIER)
+			velocity.x = move_toward(velocity.x, 0, 50)
 	
 	## when a direction key is pressed, track which direction the player is facing for dash
 	if Input.is_action_just_pressed("right"):
 		last_facing_right = true
 	if Input.is_action_just_pressed("left"):
 		last_facing_right = false
-	
 	
 	move_and_slide()

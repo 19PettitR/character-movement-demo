@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://coh8amutn3388"]
+[gd_scene load_steps=11 format=3 uid="uid://coh8amutn3388"]
 
-[ext_resource type="Texture2D" uid="uid://fng7vs31f77h" path="res://assets/square.png" id="1_ot53i"]
-[ext_resource type="Script" path="res://player.gd" id="1_ptkta"]
+[ext_resource type="Texture2D" uid="uid://bupiv8kx7hu16" path="res://player/square.png" id="1_ot53i"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_ptkta"]
+[ext_resource type="Script" path="res://player/camera_2d.gd" id="3_xv7os"]
 
 [sub_resource type="Animation" id="Animation_s3wf4"]
 length = 0.001
@@ -98,6 +99,7 @@ _data = {
 size = Vector2(80, 80)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_ptkta")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -112,3 +114,6 @@ autoplay = "idle (red)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qkcyw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_xv7os")

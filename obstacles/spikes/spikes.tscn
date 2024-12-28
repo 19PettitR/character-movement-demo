@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl4y6wop541mm"]
+
+[ext_resource type="Texture2D" uid="uid://efpjptob507s" path="res://obstacles/spikes/spikes.png" id="1_ot3qd"]
+[ext_resource type="Script" path="res://obstacles/spikes/spikes.gd" id="1_ubso1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5twr"]
+size = Vector2(80, 14)
+
+[sub_resource type="Animation" id="Animation_so8hb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.699653, 0.699653, 0.699653, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_any0p"]
+resource_name = "touched"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.240846, 0.325779, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gma1m"]
+_data = {
+"RESET": SubResource("Animation_so8hb"),
+"touched": SubResource("Animation_any0p")
+}
+
+[node name="Spikes" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ubso1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_r5twr")
+debug_color = Color(0.896857, 0.316709, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.699653, 0.699653, 0.699653, 1)
+texture_filter = 1
+texture = ExtResource("1_ot3qd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gma1m")
+}

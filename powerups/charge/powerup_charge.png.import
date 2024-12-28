@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j7sxwnr8qyfn"
-path="res://.godot/imported/sky.png-5f245714f6a8ddd8d2d452ade02334b8.ctex"
+uid="uid://djo5d42gy7k02"
+path="res://.godot/imported/powerup_charge.png-5029b2a30978e99e098962fe37c7d2ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sky.png"
-dest_files=["res://.godot/imported/sky.png-5f245714f6a8ddd8d2d452ade02334b8.ctex"]
+source_file="res://powerups/charge/powerup_charge.png"
+dest_files=["res://.godot/imported/powerup_charge.png-5029b2a30978e99e098962fe37c7d2ae.ctex"]
 
 [params]
 
