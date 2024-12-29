@@ -16,3 +16,9 @@ texture = ExtResource("1_7ueu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hvybl")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hvybl")

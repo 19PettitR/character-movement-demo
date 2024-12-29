@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p80g36mghowp"]
+[gd_scene load_steps=11 format=3 uid="uid://p80g36mghowp"]
 
 [ext_resource type="Texture2D" uid="uid://im1wfd33q3lx" path="res://level/sky.png" id="1_ypqwy"]
 [ext_resource type="Texture2D" uid="uid://1lvyqcjccrfj" path="res://level/grass level.png" id="2_b6xx4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cylq8lo0mdmui" path="res://out_of_bounds.tscn" id="5_cr5r6"]
 [ext_resource type="PackedScene" uid="uid://dl4y6wop541mm" path="res://obstacles/spikes/spikes.tscn" id="6_wqlfw"]
 [ext_resource type="PackedScene" uid="uid://dpucl4xtuxel6" path="res://GUI/Lives.tscn" id="7_ttqwp"]
+[ext_resource type="PackedScene" uid="uid://c06p65fixvxxp" path="res://powerups/charge/charge.tscn" id="8_coxv6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5h00w"]
 texture = ExtResource("2_b6xx4")
@@ -78,3 +79,15 @@ position = Vector2(3913, 496)
 scale = Vector2(1.74298, 1.74298)
 
 [node name="Lives" parent="." instance=ExtResource("7_ttqwp")]
+
+[node name="Charge" parent="." instance=ExtResource("8_coxv6")]
+position = Vector2(278, 369)
+scale = Vector2(0.551147, 0.551147)
+
+[node name="Charge2" parent="." instance=ExtResource("8_coxv6")]
+position = Vector2(5135, 144)
+scale = Vector2(0.551147, 0.551147)
+
+[node name="Charge3" parent="." instance=ExtResource("8_coxv6")]
+position = Vector2(2922, 257)
+scale = Vector2(0.551147, 0.551147)

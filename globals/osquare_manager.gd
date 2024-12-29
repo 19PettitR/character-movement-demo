@@ -24,6 +24,7 @@ func receive(name: String, speed: int, left_limit: int, right_limit: int, height
 
 
 func reload() -> void:
+	
 	## for each name given, create a new Osquare and give it properties based on corresponding index
 	## ...in the other arrays
 	for i in range(0, len(names)):

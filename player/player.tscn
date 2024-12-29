@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://coh8amutn3388"]
+[gd_scene load_steps=12 format=3 uid="uid://coh8amutn3388"]
 
 [ext_resource type="Texture2D" uid="uid://bupiv8kx7hu16" path="res://player/square.png" id="1_ot53i"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_ptkta"]
@@ -86,9 +86,25 @@ tracks/0/keys = {
 "values": [Color(5.19812e-06, 0.666158, 0.956126, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_c437e"]
+resource_name = "charge (pink)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.941235, 8.85606e-06, 0.604947, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fcapc"]
 _data = {
 "RESET": SubResource("Animation_s3wf4"),
+"charge (pink)": SubResource("Animation_c437e"),
 "dash (orange)": SubResource("Animation_vq8hy"),
 "idle (red)": SubResource("Animation_4gms7"),
 "jump (yellow)": SubResource("Animation_akrkf"),

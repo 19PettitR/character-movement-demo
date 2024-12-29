@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c06p65fixvxxp"]
+
+[ext_resource type="Texture2D" uid="uid://djo5d42gy7k02" path="res://powerups/charge/powerup_charge.png" id="1_pbytj"]
+[ext_resource type="Script" path="res://powerups/charge/charge.gd" id="1_sjssq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csx2g"]
+radius = 40.0
+
+[node name="Charge" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_sjssq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_pbytj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_csx2g")
+debug_color = Color(0.05475, 0.650039, 7.70092e-07, 0.42)
