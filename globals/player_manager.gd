@@ -1,3 +1,4 @@
+## manages player health and powerups
 extends Node
 
 @onready var player: CharacterBody2D = get_node("/root/Node/Player")

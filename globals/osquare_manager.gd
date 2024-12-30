@@ -1,3 +1,4 @@
+## NOT USED. wouldve been used to save osquares and reload them upon player's death
 extends Node2D
 
 @onready var level = get_node("/root/Node")

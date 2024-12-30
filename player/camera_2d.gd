@@ -1,3 +1,4 @@
+## the camera. used to find limits for the camera. only right and bottom limits work properlys
 extends Camera2D
 
 @onready var player: CharacterBody2D = $".."

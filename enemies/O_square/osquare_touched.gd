@@ -1,3 +1,4 @@
+## for the osquare. detects if it has been touched and tells the player manager
 extends Area2D
 
 @onready var o_square: O_square = $".."
@@ -8,7 +9,6 @@ func _ready() -> void:
 
 func _call_player_manager(_p: Node2D) -> void:
 	if PlayerManager.player.is_charging:
-		print("ouch")
 		o_square.queue_free()
 	else:
 		PlayerManager.player_damaged(1)

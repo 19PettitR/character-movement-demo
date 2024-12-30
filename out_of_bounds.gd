@@ -1,4 +1,6 @@
+## red box beneath the map. if it is touched by the player, it tells the player manager
 extends Area2D
+
 
 ## connect _call_player_manager to the body_entered signal so it runs when the player enters the red
 func _ready() -> void:

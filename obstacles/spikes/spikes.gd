@@ -1,3 +1,4 @@
+## for the spikes. detects if touched by the player, plays an animations and tells the player manager
 extends Area2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
