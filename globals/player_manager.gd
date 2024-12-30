@@ -17,10 +17,12 @@ func player_died() -> void:
 
 
 func player_damaged(d: int) -> void:
+	
 	if player.health > 0:
 		player.health = player.health - d
 	if player.health == 0:
 		player_died()
+		return
 	print("health: ", player.health)
 	pass
 
@@ -29,3 +31,4 @@ func powerup_collected(powerup: String) -> void:
 	if powerup == "charge":
 		player.charges = player.charges + 1
 		print("charges: ", player.charges)
+		

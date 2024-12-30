@@ -7,6 +7,7 @@ class_name Player extends CharacterBody2D
 @export var speed = 300.0
 @export var jump_velocity = -420.0
 @export var gravity_multiplier = 0.8
+@export var knockback_speed = 400.0
 
 @export_category("Dash")
 @export var dash_boost = 5
@@ -21,11 +22,12 @@ var dash_cooldown : bool = false
 ## track which direction the player was last facing so they can dash in correct direction when idle
 var last_facing_right : bool = true
 
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _physics_process(delta: float) -> void:
-	
+
 	# Add the gravity.
 	if not is_on_floor():
 		## decrease the gravity if dashing (because it looks better)

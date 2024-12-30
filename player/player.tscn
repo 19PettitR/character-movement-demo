@@ -19,6 +19,21 @@ tracks/0/keys = {
 "values": [Color(1, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_c437e"]
+resource_name = "charge (pink)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.941235, 8.85606e-06, 0.604947, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_vq8hy"]
 resource_name = "dash (orange)"
 length = 0.05
@@ -84,21 +99,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(5.19812e-06, 0.666158, 0.956126, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_c437e"]
-resource_name = "charge (pink)"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.941235, 8.85606e-06, 0.604947, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fcapc"]
