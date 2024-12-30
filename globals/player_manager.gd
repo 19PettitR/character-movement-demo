@@ -8,12 +8,15 @@ func _ready() -> void:
 
 
 func player_died() -> void:
+	#get_tree().quit
 	player.velocity.x = 0
 	player.velocity.y = 0
 	player.global_position.x = 125
 	player.global_position.y = 550
 	player.health = 3
-	OSquareManager.reload()
+	
+	## does not work :(
+	##OSquareManager.reload()
 
 
 func player_damaged(d: int) -> void:
@@ -24,7 +27,10 @@ func player_damaged(d: int) -> void:
 		player_died()
 		return
 	print("health: ", player.health)
-	pass
+	
+	## 'knockback' system. not very good
+	player.velocity.x = -player.knockback_speed
+	player.velocity.y = -player.knockback_speed
 
 
 func powerup_collected(powerup: String) -> void:
