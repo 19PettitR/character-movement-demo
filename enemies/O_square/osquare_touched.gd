@@ -9,6 +9,6 @@ func _ready() -> void:
 
 func _call_player_manager(_p: Node2D) -> void:
 	if PlayerManager.player.is_charging:
-		o_square.queue_free()
+		o_square.die()
 	else:
 		PlayerManager.player_damaged(1)

@@ -127,4 +127,4 @@ func charge() -> void:
 	if not is_on_floor():
 		animation_player.play("jump (yellow)")
 		
-	print("charges: ", charges)
+	PlayerHud.update_charge(charges)

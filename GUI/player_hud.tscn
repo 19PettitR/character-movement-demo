@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpucl4xtuxel6"]
+
+[ext_resource type="Script" path="res://GUI/player_hud.gd" id="1_8yidx"]
+
+[node name="Player HUD" type="CanvasLayer"]
+script = ExtResource("1_8yidx")
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health Label" type="Label" parent="Control"]
+modulate = Color(0.0919441, 4.32936e-05, 0.33031, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "Health: 3
+"
+
+[node name="Charge Label" type="Label" parent="Control"]
+modulate = Color(0.0919441, 4.32936e-05, 0.33031, 1)
+layout_mode = 0
+offset_top = 29.0
+offset_right = 101.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 20
+text = "Charges: 0
+"
+
+[node name="Enemies Label" type="Label" parent="Control"]
+modulate = Color(0.746157, 0, 0.185587, 1)
+layout_mode = 0
+offset_left = 688.0
+offset_right = 900.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 20
+text = "Enemies Remaining: 0
+"
