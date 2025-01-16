@@ -2,21 +2,24 @@
 extends Node
 
 @onready var player: CharacterBody2D = get_node("/root/Node/Player")
-signal respawn
+signal player_dead
 
 func _ready() -> void:
 	await get_tree().process_frame
 
 
 func player_died() -> void:
-	#get_tree().quit
-	respawn.emit()
+	player_dead.emit()
+	
 	player.velocity.x = 0
 	player.velocity.y = 0
+	
 	player.global_position.x = 125
 	player.global_position.y = 550
+	
 	player.health = 3
 	player.charges = 0
+	
 	PlayerHud.update_health(player.health)
 	PlayerHud.update_charge(player.charges)
 
@@ -38,5 +41,9 @@ func player_damaged(d: int) -> void:
 func powerup_collected(powerup: String) -> void:
 	if powerup == "charge":
 		player.charges = player.charges + 1
-		print("charges: ", player.charges)
 		PlayerHud.update_charge(player.charges)
+
+
+func exit() -> void:
+	## this crashes the game, but it does the job
+	get_tree().quit()

@@ -58,6 +58,8 @@ func _physics_process(delta: float) -> void:
 	## handle dash only if not already dashing, not cooling down and not charging
 	if Input.is_action_just_pressed("dash") and not is_dashing and not dash_cooldown and not is_charging:
 		
+		PlayerHud.start_dash_cooldown()
+		
 		## dashing to true during speed increase
 		is_dashing = true
 		animation_player.play("dash (orange)")
@@ -81,6 +83,7 @@ func _physics_process(delta: float) -> void:
 			animation_player.play("jump (yellow)")
 		## cool down lasts 1.2 seconds total
 		await get_tree().create_timer(1).timeout
+		PlayerHud.end_dash_cooldown()
 		dash_cooldown = false
 	
 	## handle charging

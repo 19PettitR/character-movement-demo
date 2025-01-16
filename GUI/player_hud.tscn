@@ -19,26 +19,61 @@ modulate = Color(0.0919441, 4.32936e-05, 0.33031, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "Health: 3
 "
 
 [node name="Charge Label" type="Label" parent="Control"]
 modulate = Color(0.0919441, 4.32936e-05, 0.33031, 1)
 layout_mode = 0
-offset_top = 29.0
+offset_top = 43.0
 offset_right = 101.0
-offset_bottom = 57.0
-theme_override_font_sizes/font_size = 20
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
 text = "Charges: 0
 "
 
 [node name="Enemies Label" type="Label" parent="Control"]
 modulate = Color(0.746157, 0, 0.185587, 1)
 layout_mode = 0
-offset_left = 688.0
-offset_right = 900.0
-offset_bottom = 28.0
-theme_override_font_sizes/font_size = 20
-text = "Enemies Remaining: 0
-"
+offset_left = 579.0
+offset_top = 4.0
+offset_right = 888.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 30
+text = "0 Enemies Remaining"
+
+[node name="Dash Cooldown" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 570.0
+offset_right = 32.0
+offset_bottom = 594.0
+
+[node name="Full Screen" type="ColorRect" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Important Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -38.0
+offset_right = 106.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="Timer" type="Timer" parent="."]

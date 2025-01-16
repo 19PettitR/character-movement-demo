@@ -12,7 +12,7 @@ var start_position : Vector2
 
 func _ready() -> void:
 	PlayerHud.add_enemy()
-	PlayerManager.respawn.connect(_respawn)
+	PlayerManager.player_dead.connect(_respawn)
 	start_position = self.global_position
 
 
