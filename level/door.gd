@@ -10,7 +10,7 @@ func _ready() -> void:
 func _player_exit(_p: Node2D) -> void:
 	if PlayerHud.enemies_in_level == 0:
 		PlayerHud.announce("You Win!", 1, "green")
-		timer.start(3)
+		timer.start(2)
 		await timer.timeout
 		PlayerManager.exit()
 	else:

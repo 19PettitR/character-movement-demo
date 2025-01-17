@@ -67,7 +67,7 @@ func announce(message: String, time: int = 1, colour: String = "white") -> void:
 
 
 func start_dash_cooldown() -> void:
-	dash_cooldown.color = "dark gray"
+	dash_cooldown.color = "dim gray"
 
 
 func end_dash_cooldown() -> void:

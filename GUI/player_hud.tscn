@@ -46,8 +46,8 @@ text = "0 Enemies Remaining"
 [node name="Dash Cooldown" type="ColorRect" parent="Control"]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 570.0
-offset_right = 32.0
+offset_top = 560.0
+offset_right = 43.0
 offset_bottom = 594.0
 
 [node name="Full Screen" type="ColorRect" parent="Control"]
