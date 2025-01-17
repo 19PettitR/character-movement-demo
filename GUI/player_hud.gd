@@ -48,7 +48,7 @@ func remove_enemy() -> void:
 		enemies_label.text = str(enemies_in_level) + " Enemies Remaining"
 
 
-func announce(message: String, time: int = 1, colour: String = "white") -> void:
+func announce(message: String, time: int = 0, colour: String = "white") -> void:
 	
 	if message == "code_1":
 		
